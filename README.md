@@ -33,11 +33,26 @@ Want to help out with development, testing, and/or documentation? Great! As both
 
 ## Installation / Running the Matter Server
 
-- Endusers of Home Assistant, refer to the [Home Assistant documentation](https://www.home-assistant.io/integrations/matter/) how to run Matter in Home Assistant using the official Matter Server add-on, which is based on this project.
+The Matter Server can be installed and run in an isolated Python virtual
+environment. Clone the repository and create the environment:
 
-- For running the server and/or client in your development environment, see the [Development documentation](DEVELOPMENT.md).
+```bash
+git clone https://github.com/home-assistant-libs/python-matter-server.git
+cd python-matter-server
+python3 -m venv .venv
+source .venv/bin/activate
+pip install ".[server]"
+```
 
-- For running the Matter Server as a standalone docker container, see our instructions [here](docs/docker.md).
+After installation the server can be started with:
+
+```bash
+python -m matter_server.server
+```
+
+See the [Development documentation](DEVELOPMENT.md) for more information about
+running in a development environment or check the [Docker instructions](docs/docker.md)
+for running the server in a container.
 
 > [!NOTE]
 > Both Matter and this implementation are in an early state and features are probably missing or could be improved. See our [development notes](#development) how you can help out, with development and/or testing.
